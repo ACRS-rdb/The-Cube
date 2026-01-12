@@ -1,0 +1,301 @@
+<?xml version="1.0" ?>
+<robot name="The_Cube" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find The_Cube_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find The_Cube_description)/urdf/The_Cube.trans" />
+<xacro:include filename="$(find The_Cube_description)/urdf/The_Cube.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.18905310681396006 -0.004749472984420826 0.06775041785741594" rpy="0 0 0"/>
+    <mass value="0.2825071164855692"/>
+    <inertia ixx="0.001861" iyy="0.00186" izz="0.00186" ixy="6e-06" iyz="6e-06" ixz="6e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="DCmotor_1_1">
+  <inertial>
+    <origin xyz="0.016235749154079743 -0.00029565182233933803 -0.0001238340027178153" rpy="0 0 0"/>
+    <mass value="0.3882772403065904"/>
+    <inertia ixx="8.5e-05" iyy="8.7e-05" izz="8.9e-05" ixy="1e-06" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.139601 -4e-06 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/DCmotor_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.139601 -4e-06 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/DCmotor_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="DCmotor_2_1">
+  <inertial>
+    <origin xyz="-0.00028991814949216876 0.016235960708810074 0.0001247371181640755" rpy="0 0 0"/>
+    <mass value="0.3882772403065906"/>
+    <inertia ixx="8.7e-05" iyy="8.5e-05" izz="8.9e-05" ixy="1e-06" iyz="-0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.193804 0.0542 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/DCmotor_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.193804 0.0542 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/DCmotor_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="DCmotor_3_1">
+  <inertial>
+    <origin xyz="-0.00028553038008385934 -0.00012473802118328678 0.016235959805811672" rpy="0 0 0"/>
+    <mass value="0.38827724030659055"/>
+    <inertia ixx="8.7e-05" iyy="9e-05" izz="8.5e-05" ixy="-1e-06" iyz="0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.193804 -4e-06 -0.0183" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/DCmotor_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.193804 -4e-06 -0.0183" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/DCmotor_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="reaction_wheel_1_1">
+  <inertial>
+    <origin xyz="0.0031061780427162483 -3.3845253018953483e-07 5.027848573035953e-07" rpy="0 0 0"/>
+    <mass value="0.19036250502089258"/>
+    <inertia ixx="0.000413" iyy="0.000208" izz="0.000208" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.120001 -4e-06 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/reaction_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.120001 -4e-06 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/reaction_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="reaction_wheel_3_1">
+  <inertial>
+    <origin xyz="3.857142678309611e-07 -5.557168391683256e-07 0.003106388694394966" rpy="0 0 0"/>
+    <mass value="0.19036250502089255"/>
+    <inertia ixx="0.000208" iyy="0.000208" izz="0.000413" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.193804 -4e-06 0.0013" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/reaction_wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.193804 -4e-06 0.0013" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/reaction_wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="reaction_wheel_2_1">
+  <inertial>
+    <origin xyz="3.861645718472584e-07 0.003106389597414161 5.547260085170258e-07" rpy="0 0 0"/>
+    <mass value="0.19036250502089228"/>
+    <inertia ixx="0.000208" iyy="0.000413" izz="0.000208" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.193804 0.0738 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/reaction_wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.193804 0.0738 -0.072496" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/reaction_wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="The_Cube_PCB_1">
+  <inertial>
+    <origin xyz="0.0028491973514292723 0.002848850839225127 0.0029707845072653727" rpy="0 0 0"/>
+    <mass value="0.05175046450228398"/>
+    <inertia ixx="3.7e-05" iyy="3.7e-05" izz="2.8e-05" ixy="1e-06" iyz="1.2e-05" ixz="1.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.211828 -0.022271 -0.097407" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/The_Cube_PCB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.211828 -0.022271 -0.097407" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/The_Cube_PCB_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="MPU6050_1">
+  <inertial>
+    <origin xyz="0.0024698756000315902 -0.00812619069231936 0.0036981199398701953" rpy="0 0 0"/>
+    <mass value="0.0005888788244722338"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.205893 -0.001485 -0.085962" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/MPU6050_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.205893 -0.001485 -0.085962" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/MPU6050_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="holder_1">
+  <inertial>
+    <origin xyz="0.012396373549256406 0.01311986574119364 -0.05831014993150063" rpy="0 0 0"/>
+    <mass value="0.04356341625735479"/>
+    <inertia ixx="5.2e-05" iyy="5.1e-05" izz="5.1e-05" ixy="1.1e-05" iyz="1.1e-05" ixz="1.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.193801 -0.0 -0.1463" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.193801 -0.0 -0.1463" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/holder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_1">
+  <inertial>
+    <origin xyz="0.016427177372571544 0.01642641382208172 -0.018280922688341597" rpy="0 0 0"/>
+    <mass value="0.07248689999999999"/>
+    <inertia ixx="2e-05" iyy="2e-05" izz="1.3e-05" ixy="-1e-06" iyz="6e-06" ixz="6e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.190512 0.003288 -0.108999" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.190512 0.003288 -0.108999" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://The_Cube_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Fix 1" type="fixed">
+  <origin xyz="0.139601 4e-06 0.072496" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="DCmotor_1_1"/>
+</joint>
+
+<joint name="Fix 2" type="fixed">
+  <origin xyz="0.193804 -0.0542 0.072496" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="DCmotor_2_1"/>
+</joint>
+
+<joint name="Fix 3" type="fixed">
+  <origin xyz="0.193804 4e-06 0.0183" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="DCmotor_3_1"/>
+</joint>
+
+<joint name="Joint 1" type="continuous">
+  <origin xyz="-0.0196 0.0 0.0" rpy="0 0 0"/>
+  <parent link="DCmotor_1_1"/>
+  <child link="reaction_wheel_1_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Joint 2" type="continuous">
+  <origin xyz="0.0 0.0 -0.0196" rpy="0 0 0"/>
+  <parent link="DCmotor_3_1"/>
+  <child link="reaction_wheel_3_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Joint 3" type="continuous">
+  <origin xyz="0.0 -0.0196 0.0" rpy="0 0 0"/>
+  <parent link="DCmotor_2_1"/>
+  <child link="reaction_wheel_2_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="Fix 5" type="fixed">
+  <origin xyz="0.018027 0.022271 -0.048893" rpy="0 0 0"/>
+  <parent link="holder_1"/>
+  <child link="The_Cube_PCB_1"/>
+</joint>
+
+<joint name="Fix 6" type="fixed">
+  <origin xyz="0.012092 0.001485 -0.060338" rpy="0 0 0"/>
+  <parent link="holder_1"/>
+  <child link="MPU6050_1"/>
+</joint>
+
+<joint name="Fix 7" type="fixed">
+  <origin xyz="0.193801 0.0 0.1463" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="holder_1"/>
+</joint>
+
+<joint name="Fix 4" type="fixed">
+  <origin xyz="-0.003289 -0.003288 -0.037301" rpy="0 0 0"/>
+  <parent link="holder_1"/>
+  <child link="battery_1"/>
+</joint>
+
+</robot>
