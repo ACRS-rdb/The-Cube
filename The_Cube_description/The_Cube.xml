@@ -1,0 +1,46 @@
+<mujoco model="The_Cube">
+    <compiler angle="radian" eulerseq="XYZ" inertiafromgeom="true"/>
+    <asset>
+        <mesh name="base_link" file="meshes/base_link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="reaction_wheel_3" file="meshes/reaction_wheel_3.stl" scale="0.001 0.001 0.001" />
+        <mesh name="reaction_wheel_1" file="meshes/reaction_wheel_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="reaction_wheel_2" file="meshes/reaction_wheel_2.stl" scale="0.001 0.001 0.001" />
+        <mesh name="MPU6050" file="meshes/MPU6050.stl" scale="0.001 0.001 0.001"/>
+    </asset>
+    <worldbody>
+        <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
+        <geom pos="0 0 0" size="1 1 1" type="plane" rgba="1 0.83 0.61 0.5" />
+        <body name="base_link" pos="0.15278597142943887 -0.07599999903781705 -0.0034999999408346395" euler="-1.0290576845680475e-14 -1.0290570069853978e-14 5.839896183582696e-22">
+            <freejoint name="base_link_freejoint" />
+            <geom name="base_link_geom" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" mass="1.615"/>
+            <body name="reaction_wheel_1" pos="0.0021999968702376194 0.07600478593546903 0.0759968515037587" euler="-1.570796993803488 1.486541372447481 -1.570796996178023">
+                <joint name="Joint1" type="hinge" axis="0 0 1" pos="9.147637410338744e-07 -7.124427155299811e-07 3.17003758405811e-08" damping="0.001"/>
+                <geom name="reaction_wheel_1_geom" type="mesh" mesh="reaction_wheel_1" pos="0 0 0" euler="0 0 0" mass="0.075" contype="0" />
+            </body>
+            <body name="reaction_wheel_2" pos="0.07600355146627129 0.0021999968710589802 0.07599644531936936" euler="1.5707962706625866 2.661035078311999e-16 -3.1415926488491457">
+                <joint name="Joint2" type="hinge" axis="0 0 1" pos="-4.771042906684374e-07 -4.4537853553467294e-07 2.1667300255759134e-09" damping="0.001"/>
+                <geom name="reaction_wheel_2_geom" type="mesh" mesh="reaction_wheel_2" pos="0 0 0" euler="0 0 0" mass="0.075" contype="0" />
+            </body>
+            <body name="reaction_wheel_3" pos="0.07600355146627147 0.07600355275626484 0.0021999968710590175" euler="-5.613231023530869e-08 4.740637158478099e-09 3.141592653589793">
+                <joint name="Joint3" type="hinge" axis="0 0 1" pos="-4.771042897567888e-07 -4.4628155241044613e-07 3.0697483112094855e-09" damping="0.001"/>
+                <geom name="reaction_wheel_3_geom" type="mesh" mesh="reaction_wheel_3" pos="0 0 0" euler="0 0 0" mass="0.075" contype="0" />
+            </body>
+            <body name="MPU6050" pos="0.07945692206587657 0.07949076467875488 0.09236623966255957" euler="3.906787677822175e-15 3.629231922103113e-15 -6.883383336665552e-15">
+                <geom name="MPU6050_geom" type="mesh" mesh="MPU6050" pos="0 0 0" euler="0 0 0" mass="0.000589" contype="0"/>
+                <site name="MPU6050" pos="0 0 0" size="0.005" rgba="0 1 0 0.5"/>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <velocity name="v1" joint="Joint1" kv="1" forcerange="-0.05 0.05" ctrlrange="-500 500"/>
+        <velocity name="v2" joint="Joint2" kv="1" forcerange="-0.05 0.05" ctrlrange="-500 500"/>
+        <velocity name="v3" joint="Joint3" kv="1" forcerange="-0.05 0.05" ctrlrange="-500 500"/>
+    </actuator>
+    <sensor>
+        <gyro name="imu_gyro" site="MPU6050" />
+        <accelerometer name="imu_accel" site="MPU6050" />
+        <actuatorvel name="rw1_speed" actuator="v1" />
+        <actuatorvel name="rw2_speed" actuator="v2" />
+        <actuatorvel name="rw3_speed" actuator="v3" />
+    </sensor>
+</mujoco>
