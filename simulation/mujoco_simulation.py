@@ -32,7 +32,7 @@ mujoco.mjd_transitionFD(m, d, 1e-6, True, A, B, None, None)
 # 目標姿態（直立）與反應輪角度（都為零）
 q_target = np.array([quat[3], quat[0], quat[1], quat[2], 0, 0, 0])
 
-# 使用歐拉前向法離散化線性系統
+# 使用歐拉方法離散化線性系統
 # x[k+1] = A_d * x[k] + B_d * u[k]
 A_d = np.eye(12) + A * m.opt.timestep  # 離散狀態轉移矩陣
 B_d = B * m.opt.timestep  # 離散控制輸入矩陣
@@ -52,12 +52,11 @@ initial_condition_constraint = prog.AddLinearEqualityConstraint(
 u_limit = 1.0  # 控制輸入限制（反應輪目標速度，單位：rad/s）
 
 # 代價函數權重矩陣
-# Q: 狀態誤差權重 [姿態誤差(3), 未使用(3), 角速度(3), 反應輪速度(3)]
+# Q: 狀態誤差權重 [姿態誤差(3), 反應輪位置(3), 角速度(3), 反應輪速度(3)]
 Q = np.diag([10000000000, 10000000000, 10000000000, 0, 0, 0, 7000, 7000, 7000, 6e-6, 6e-6, 6e-6])
-R = np.eye(3) * 1e-20  # 控制輸入權重（非常小，幾乎不懲罰控制輸入）
+R = np.eye(3) * 1e-20  # 控制輸入權重
 
 x_target = np.zeros(12)  # 目標狀態（零誤差）
-u_real_prev = np.zeros(3)  # 上一次控制輸入（未使用）
 
 # 為預測時域內的每個時間步添加約束與代價
 for k in range(N):
