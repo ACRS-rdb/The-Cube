@@ -48,6 +48,10 @@ This project uses and modifies the self-balancing cube design by **remrc**:
 
 - **Original design**: [Self balancing cube (cubli) by remrc](https://www.thingiverse.com/thing:6695891)
 - **License**: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+- 
+**Nidec 24H BLDC Motor CAD by VoltLAB ([GrabCAD](https://grabcad.com/library/nidec-24h-6mm-bldc-brushless-motor-with-encoder-2gt-pulley-servo-1))**
+
+**MPU6050 CAD by Siddharaj Junnarkar ([GrabCAD](https://grabcad.com/library/mpu6050-8))**
 
 **Modifications made**: The original STL/mesh files were modified for MuJoCo simulation compatibility (geometry cleanup, scaling, coordinate frame adjustments) and to support future real-world hardware builds.
 
