@@ -17,33 +17,37 @@
         <geom pos="0 0 0" size="1 1 1" type="plane" rgba="1 0.83 0.61 0.5" />
         <body name="base_link" pos="-2.366296991572179e-17 8.984428253791882e-18 9.821610693594415e-18" euler="0.7853981633974474 -0.6154729074232795 -1.5707963267948961">
             <joint name="base_link" type="ball" />
-            <geom name="base_link_geom" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" mass="0.362" />
+            <geom name="base_link_geom" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0"/>
+            <geom type="box" size="0.076 0.076 0.076" pos="0.076 0.076 0.076" mass="0.362" rgba="0 0 0 0"/>
             <body name="MPU6050" pos="0.07945692206587694 0.0794907646787547 0.09236623966255973" euler="3.3861802251067243e-15 3.1086244689504356e-15 -6.938893903907222e-15">
-                <geom name="MPU6050_geom" type="mesh" mesh="MPU6050" pos="0 0 0" euler="0 0 0" mass="0.00282" contype="0" />
+                <geom name="MPU6050_geom" type="mesh" mesh="MPU6050" pos="0 0 0" euler="0 0 0" mass="0.00282" contype="0" conaffinity="0"/>
                 <site name="MPU6050" pos="0 0 0" size="0.01"/>
             </body>
             <body name="battery" pos="2.220446114900651e-17 7.105427357601002e-17 -1.1618931845494013e-17" euler="-0.78539816339744 7.882841819887513e-15 -0.7853981633974543">
-                <geom name="battery_geom" type="mesh" mesh="battery" pos="0 0 0" euler="0 0 0" mass="0.049"/>
+                <geom name="battery_geom" type="mesh" mesh="battery" pos="0 0 0" euler="0 0 0" mass="0.049" contype="0" conaffinity="0"/>
             </body>
             <body name="DCmotor_1" pos="0.0021999968702095902 0.07600355144673097 0.07599645767775352" euler="-0.7853981633974476 1.1687352135885348e-15 -0.7853981633974547">
-                <geom name="DCmotor_1_geom" type="mesh" mesh="DCmotor_1" pos="0 0 0" euler="0 0 0" mass="0.11" contype="0"/>
+                <geom name="DCmotor_1_geom" type="mesh" mesh="DCmotor_1" pos="0 0 0" euler="0 0 0" mass="0.11" contype="0" conaffinity="0"/>
                 <body name="reaction_wheel_1" pos="4.888976135219991e-07 -1.4324117880715193e-07 -5.481644955018794e-07" euler="0.9553166952023286 -0.5235987325034739 2.5261129030283587">
                     <joint name="Joint1" type="hinge" axis="0 0 1" pos="8.430785904720072e-07 4.60698196180371e-07 -2.2582937499535663e-08" />
-                    <geom name="reaction_wheel_1_geom" type="mesh" mesh="reaction_wheel_1" pos="0 0 0" euler="0 0 0" mass="0.735" contype="0"/>
+                    <geom name="reaction_wheel_1_geom" type="mesh" mesh="reaction_wheel_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0"/>
+                    <geom type="cylinder" size="0.0632 0.0035" pos="0 0 0.007" euler="0 0 0" mass="0.735" contype="0" conaffinity="0" rgba="0 0 0 0"/>
                 </body>
             </body>
             <body name="DCmotor_2" pos="0.076003551486097 0.002199996871058961 0.07599644531936388" euler="-0.7853981633974322 1.9697962946635538e-16 -0.7853981633974545">
-                <geom name="DCmotor_2_geom" type="mesh" mesh="DCmotor_2" pos="0 0 0" euler="0 0 0" mass="0.11" contype="0"/>
+                <geom name="DCmotor_2_geom" type="mesh" mesh="DCmotor_2" pos="0 0 0" euler="0 0 0" mass="0.11" contype="0" conaffinity="0"/>
                 <body name="reaction_wheel_2" pos="4.888968830840668e-07 5.481621855829566e-07 1.4324245576347038e-07" euler="0.9553165455162198 0.5235988241671399 -2.5261129778713993">
                     <joint name="Joint2" type="hinge" axis="0 0 1" pos="5.48564712214651e-07 6.100682713129193e-08 -2.689781667645634e-07" />
-                    <geom name="reaction_wheel_2_geom" type="mesh" mesh="reaction_wheel_2" pos="0 0 0" euler="0 0 0" mass="0.735" contype="0"/>
+                    <geom name="reaction_wheel_2_geom" type="mesh" mesh="reaction_wheel_2" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0"/>
+                    <geom type="cylinder" size="0.0632 0.0035" pos="0 0 0.007" euler="0 0 0" mass="0.735" contype="0" conaffinity="0" rgba="0 0 0 0"/>
                 </body>
             </body>
             <body name="DCmotor_3" pos="0.07600355246351696 0.07600355225119587 0.0021999968710591407" euler="-0.7853981633974394 8.715250743307479e-15 -1.5707963267948972">
-                <geom name="DCmotor_3_geom" type="mesh" mesh="DCmotor_3" pos="0 0 0" euler="0 0 0" mass="0.11" contype="0"/>
+                <geom name="DCmotor_3_geom" type="mesh" mesh="DCmotor_3" pos="0 0 0" euler="0 0 0" mass="0.11" contype="0" conaffinity="0"/>
                 <body name="reaction_wheel_3" pos="-4.963183517592284e-07 8.463956386517424e-07 8.463957369375663e-07" euler="-0.7853982064411122 -2.5695820193849554e-08 -3.1415926278939708">
                     <joint name="Joint3" type="hinge" axis="0 0 1" pos="-7.588857187373443e-07 1.195244443711477e-06 -2.7036677553459686e-07" />
-                    <geom name="reaction_wheel_3_geom" type="mesh" mesh="reaction_wheel_3" pos="0 0 0" euler="0 0 0" mass="0.735" contype="0"/>
+                    <geom name="reaction_wheel_3_geom" type="mesh" mesh="reaction_wheel_3" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0"/>
+                    <geom type="cylinder" size="0.0632 0.0035" pos="0 0 0.007" euler="0 0 0" mass="0.735" contype="0" conaffinity="0" rgba="0 0 0 0"/>
                 </body>
             </body>
         </body>
